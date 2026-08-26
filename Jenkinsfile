@@ -15,6 +15,7 @@ pipeline{
         xcopy /E /I /Y "dist\\*" "C:\\ProgramData\\Jenkins\\.jenkins\\userContent\\todo"
 
         start "" /B npx -y serve -s "C:\\ProgramData\\Jenkins\\.jenkins\\userContent\\todo" -l 9090
+        '''
       }
     }
   }
