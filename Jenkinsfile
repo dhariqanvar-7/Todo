@@ -11,8 +11,10 @@ pipeline {
                     @echo off
                     call npm ci
                     call npm run build
-                    xcopy /E /I /Y "dist\\*" "C:\\ProgramData\\Jenkins\\.jenkins\\userContent\\todo"
-                    start "" /B npx -y serve -s "C:\\ProgramData\\Jenkins\\.jenkins\\userContent\\todo" -l 9090
+
+                    xcopy /E /I /Y "dist\\*" "C:\\ProgramData\\Jenkins\\.jenkins\\userContent\\todo_%BUILD_NUMBER%"
+
+                    start "" /B npx -y serve -s "C:\\ProgramData\\Jenkins\\.jenkins\\userContent\\todo_%BUILD_NUMBER%" -l 9090
                 '''
             }
         }
